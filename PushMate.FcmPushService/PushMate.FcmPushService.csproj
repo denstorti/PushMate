@@ -5,7 +5,7 @@
     <DebugType>full</DebugType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Description>This component has the responsibility of parsing an Message object or a json, validate the notification attributes and send it to the Firebase Cloud Messaging</Description>
+    <Description>Allows you to send notifications using Firebase Cloud Messaging.</Description>
     <RepositoryUrl>https://github.com/denstorti/PushMate.FcmPushService.git</RepositoryUrl>
     <PackageProjectUrl>https://github.com/denstorti/PushMate.FcmPushService</PackageProjectUrl>
     <RepositoryType />
