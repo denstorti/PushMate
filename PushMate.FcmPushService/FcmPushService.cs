@@ -9,29 +9,29 @@ namespace PushMate.FcmPushService
     public class FcmPushService : IHttpPushService
     {
         public string EndpointUrl => "https://fcm.googleapis.com/fcm/send";
-        public HttpClient _httpClient;   //PROBLEM HERE: The HttpClient must be static to be always reused, but with unit tests the factory fails because one test override the other
+        public static HttpClient _httpClient;  
 
         /// <summary>
         /// If the HttpClient is not injected, it uses the DefaultHttpClientAccessor
         /// </summary>
-        /// <param name="authenticationKey">Server key from FCM account</param>
+        /// <param name="serverKey">Server key from FCM account</param>
         /// <param name="senderId">SenderId drom FCM account</param>
-        public FcmPushService(string authenticationKey, string senderId = null)
+        public FcmPushService(string serverKey, string senderId = null)
         {
             var defaultHttpClientAccessor = new DefaultHttpClient();
-            _httpClient = defaultHttpClientAccessor.Create(authenticationKey, senderId);
+            _httpClient = defaultHttpClientAccessor.Create(serverKey, senderId);
             
         }
 
         /// <summary>
         /// Constructor for FCM push notifications. Mocking objects may be passed in here as MockedHttpClientOK.
         /// </summary>
-        /// <param name="authenticationKey"></param>
+        /// <param name="serverKey"></param>
         /// <param name="senderId"></param>
         /// <param name="httpClientAccessor"></param>
-        public FcmPushService(string authenticationKey, string senderId, IHttpClientFactory httpClientAccessor)
+        public FcmPushService(string serverKey, string senderId, IHttpClientFactory httpClientAccessor)
         {
-            _httpClient = httpClientAccessor.Create(authenticationKey, senderId);
+            _httpClient = httpClientAccessor.Create(serverKey, senderId);
         }
         
         private bool isValidJsonSyntax(string json)

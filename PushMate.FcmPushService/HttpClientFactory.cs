@@ -7,18 +7,18 @@ namespace PushMate.FcmPushService
 {
     public interface IHttpClientFactory
     {
-        HttpClient Create(string authenticationKey, string senderId);
+        HttpClient Create(string serverKey, string senderId);
     }
 
     public class DefaultHttpClient : IHttpClientFactory
     {
-        public HttpClient Create(string authenticationKey, string senderId)
+        public HttpClient Create(string serverKey, string senderId)
         {
-            if (string.IsNullOrWhiteSpace(authenticationKey))
-                throw new ArgumentNullException(nameof(authenticationKey));
+            if (string.IsNullOrWhiteSpace(serverKey))
+                throw new ArgumentNullException(nameof(serverKey));
 
             var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", $"key={authenticationKey}");
+            httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", $"key={serverKey}");
 
             if (!String.IsNullOrEmpty(senderId))
             {
@@ -31,10 +31,10 @@ namespace PushMate.FcmPushService
 
     public class MockedHttpClientOK : IHttpClientFactory
     {
-        public HttpClient Create(string authenticationKey, string senderId)
+        public HttpClient Create(string serverKey, string senderId)
         {
-            if (string.IsNullOrWhiteSpace(authenticationKey))
-                throw new ArgumentNullException(nameof(authenticationKey));
+            if (string.IsNullOrWhiteSpace(serverKey))
+                throw new ArgumentNullException(nameof(serverKey));
 
             var httpClient = new HttpClientMock();
             
@@ -44,6 +44,7 @@ namespace PushMate.FcmPushService
     }
     public class HttpClientMock : HttpClient
     {
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
         public override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             var response = new HttpResponseMessage(System.Net.HttpStatusCode.OK);
@@ -53,6 +54,7 @@ namespace PushMate.FcmPushService
             return response;
 
         }
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
     }
 }
 

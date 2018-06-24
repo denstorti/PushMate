@@ -14,6 +14,16 @@ namespace PushMate.FcmPushService.Test.Infrastructure
         private readonly string registrationId = "dG4rFnirWOE:APA91bE3COnsY-flnulPse4b4uKZOUDRpdOAe6DGTU_jWGtJt0P_hBXoN1tOa9Je4ZyAfA11OS3US0fZm6M7EljYipCY1f4MqjDLLvEltfe8_3aDnzwTxRbuw23HQ2JIY2ihXQXUvDym";
 
         [Fact]
+        public void SendTest_InvalidJson()
+        {
+            var fcmPushService = new FcmPushService(serverKey, null, new MockedHttpClientOK());
+
+            Assert.ThrowsAsync<ArgumentException>(async () =>
+                await fcmPushService.SendAsync("invalidJson")
+            );
+        }
+
+        [Fact]
         public void SendTest_ServerKeyCannotBeNull()
         {
             Assert.Throws<ArgumentNullException>(() =>

@@ -3,6 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <DebugType>full</DebugType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>This component has the responsibility of parsing an Message object or a json, validate the notification attributes and send it to the Firebase Cloud Messaging</Description>
+    <RepositoryUrl>https://github.com/denstorti/PushMate.FcmPushService.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/denstorti/PushMate.FcmPushService</PackageProjectUrl>
+    <RepositoryType />
+    <PackageLicenseUrl>https://github.com/denstorti/PushMate.FcmPushService/blob/master/LICENSE</PackageLicenseUrl>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageTags>messages, push, notifications, .net core, android, ios, fcm, firebase, messaging, cloud</PackageTags>
+    <PackageReleaseNotes>This first version supports only HTTPS communication with FCM.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
