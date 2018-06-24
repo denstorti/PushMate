@@ -2,6 +2,7 @@ using PushMate.FcmPushService.DTO;
 using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -11,7 +12,15 @@ namespace PushMate.FcmPushService.Test.Infrastructure
     {
         private readonly string serverKey = "AIzaSyC8dhbIHM0BEDextBkH1YRGwq2zWSPW2kk";
         private readonly string registrationId = "dG4rFnirWOE:APA91bE3COnsY-flnulPse4b4uKZOUDRpdOAe6DGTU_jWGtJt0P_hBXoN1tOa9Je4ZyAfA11OS3US0fZm6M7EljYipCY1f4MqjDLLvEltfe8_3aDnzwTxRbuw23HQ2JIY2ihXQXUvDym";
-        
+
+        [Fact]
+        public void SendTest_ServerKeyCannotBeNull()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+                new FcmPushService("")
+            );
+        }
+
         [Fact]
         public async Task SendTest_ValidJsonAsync()
         {
@@ -34,6 +43,7 @@ namespace PushMate.FcmPushService.Test.Infrastructure
             var message = GetValidMessage();
 
             var result = await fcmPushService.SendAsync(message);
+            //Assert.IsType<HttpClient>(FcmPushService._httpClient);
             Console.WriteLine(result);
             Assert.True(result.Results.Count >= 1);
             Assert.NotNull(result.MulticastId);

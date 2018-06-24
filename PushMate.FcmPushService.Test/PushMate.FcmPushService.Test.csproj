@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PushMate.Infrastructure\PushMate.FcmPushService.csproj" />
+    <ProjectReference Include="..\PushMate.FcmPushService\PushMate.FcmPushService.csproj" />
   </ItemGroup>
 
 </Project>

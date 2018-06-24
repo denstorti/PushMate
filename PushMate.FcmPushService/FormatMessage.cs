@@ -25,9 +25,7 @@ namespace PushMate.FcmPushService
             }
             catch (Exception ex)
             {
-                throw new JsonSerializationException("Error during the deserialization of the response", ex);
-
-                //return new MessageResponse { InternalError = ex.Message, ResponseContent = json };
+                throw new JsonSerializationException("Error during the deserialization of the response: StatusCode: {"+response.StatusCode+ "}, Content : {" + response.Content + "}", ex);
             }
         }
 

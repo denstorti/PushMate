@@ -7,42 +7,30 @@ using Xunit;
 
 namespace PushMate.FcmPushService.Test.Infrastructure
 {
+    [TestCaseOrderer("alow", "alow")]
     public class RequestFormatTest
     {
         private readonly string serverKey = "fakeServerKey";
         private readonly string registrationId = "fakeRegistrationId";
 
         [Fact]
-        public void SendTest_SenderCannotBeNull()
-        {
-            Assert.Throws<ArgumentNullException>(() =>
-                new FcmPushService(serverKey, "")
-            );
-        }
-
-        [Fact]
-        public void SendTest_Extensions()
-        {
-        }
-
-        [Fact]
         public void SendTest_InvalidJson()
         {
-            var senderRepository = new FcmPushService(serverKey);
+            var fcmPushService = new FcmPushService(serverKey, null, new MockedHttpClientOK());
             
             Assert.ThrowsAsync<ArgumentException>(async () =>
-                await senderRepository.SendAsync("invalidJson")
+                await fcmPushService.SendAsync("invalidJson")
             );
-
         }
 
         [Fact]
         public async Task SendTest_ValidJsonAsync()
         {
-            var senderRepository = new FcmPushService(serverKey, true);
+            var fcmPushService = new FcmPushService(serverKey, null, new MockedHttpClientOK());
             string validJson = "{ \"registration_ids\":[\"dG4rFnirWOE:APA91bE3COnsY-flnulPse4b4uKZOUDRpdOAe6DGTU_jWGtJt0P_hBXoN1tOa9Je4ZyAfA11OS3US0fZm6M7EljYipCY1f4MqjDLLvEltfe8_3aDnzwTxRbuw23HQ2JIY2ihXQXUvDym\"],\"priority\":\"Normal\",\"notification\":{\"title\":\"Title\",\"body\":\"Hello World@!23-Jun-18 19:58:47\"}}";
 
-            var result = await senderRepository.SendAsync(validJson);
+            var result = await fcmPushService.SendAsync(validJson);
+            //Assert.IsType<HttpClientMock>(FcmPushService._httpClient);
             Console.WriteLine(result);
             Assert.Equal(HttpStatusCode.OK, result.StatusCode);
             Assert.Equal(1, result.Success);
@@ -55,14 +43,15 @@ namespace PushMate.FcmPushService.Test.Infrastructure
         [Fact]
         public async Task SendTest_SuccessfulAsync()
         {
-            var fcmPushService = new FcmPushService(serverKey);
+            var fcmPushService = new FcmPushService(serverKey, null, new MockedHttpClientOK());
 
             var message = GetValidMessage();
 
             var result = await fcmPushService.SendAsync(message);
             Console.WriteLine(result);
-            Assert.True(result.Results.Count >= 1);
-            Assert.NotNull(result.MulticastId);
+            Assert.Single(result.Results);
+            Assert.Equal("4674514773536739316", result.MulticastId);
+            Assert.Equal("0:1529817872903218 % 3a7f5afa3a7f5afa", result.Results[0].MessageId);
             Assert.Equal(1, result.Success);
         }
 

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushMate.FcmPushService", "PushMate.Infrastructure\PushMate.FcmPushService.csproj", "{16EE3886-771D-46EA-9EEA-56ECB6C41C7B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushMate.FcmPushService", "PushMate.FcmPushService\PushMate.FcmPushService.csproj", "{16EE3886-771D-46EA-9EEA-56ECB6C41C7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushMate.Test.Infrastructure", "PushMate.Test.Infrastructure\PushMate.Test.Infrastructure.csproj", "{EB2C6832-80F8-4EE8-B598-080365037227}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushMate.FcmPushService.Test", "PushMate.FcmPushService.Test\PushMate.FcmPushService.Test.csproj", "{EB2C6832-80F8-4EE8-B598-080365037227}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FcmPushService", "FcmPushService", "{FDF749C2-151F-4296-85A2-236E6607812F}"
 EndProject

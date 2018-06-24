@@ -6,5 +6,6 @@ namespace PushMate.FcmPushService
     public interface IHttpPushService
     {
         Task<Response> SendAsync(Message message);
+        Task<Response> SendAsync(string json);
     }
 }

@@ -1,9 +1,7 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using PushMate.FcmPushService.DTO;
 using System;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace PushMate.FcmPushService
@@ -11,40 +9,31 @@ namespace PushMate.FcmPushService
     public class FcmPushService : IHttpPushService
     {
         public string EndpointUrl => "https://fcm.googleapis.com/fcm/send";
-        private string AuthenticationKey;
-        private string SenderId;
-        private static HttpClient _httpClient;
+        public HttpClient _httpClient;   //PROBLEM HERE: The HttpClient must be static to be always reused, but with unit tests the factory fails because one test override the other
 
-        public FcmPushService(string authenticationKey, bool mockHttpClient = false)
+        /// <summary>
+        /// If the HttpClient is not injected, it uses the DefaultHttpClientAccessor
+        /// </summary>
+        /// <param name="authenticationKey">Server key from FCM account</param>
+        /// <param name="senderId">SenderId drom FCM account</param>
+        public FcmPushService(string authenticationKey, string senderId = null)
         {
-            if (string.IsNullOrWhiteSpace(authenticationKey))
-                throw new ArgumentNullException(nameof(authenticationKey));
-
-            AuthenticationKey = authenticationKey;
-
-            if (_httpClient == null && mockHttpClient == false)
-            {
-                HttpClient httpClient = new HttpClient();
-                httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", $"key={authenticationKey}");
-                _httpClient = httpClient;
-            }
-            else
-            {
-                HttpClient httpClient = new HttpClientMock();
-                httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", $"key={authenticationKey}");
-                _httpClient = httpClient;
-            }
-
+            var defaultHttpClientAccessor = new DefaultHttpClient();
+            _httpClient = defaultHttpClientAccessor.Create(authenticationKey, senderId);
+            
         }
 
-        public FcmPushService(string authenticationKey, string senderId, bool mockHttpClient = false) : this(authenticationKey, mockHttpClient)
+        /// <summary>
+        /// Constructor for FCM push notifications. Mocking objects may be passed in here as MockedHttpClientOK.
+        /// </summary>
+        /// <param name="authenticationKey"></param>
+        /// <param name="senderId"></param>
+        /// <param name="httpClientAccessor"></param>
+        public FcmPushService(string authenticationKey, string senderId, IHttpClientFactory httpClientAccessor)
         {
-            if (string.IsNullOrWhiteSpace(senderId))
-                throw new ArgumentNullException(nameof(senderId));
-
-            SenderId = senderId;
+            _httpClient = httpClientAccessor.Create(authenticationKey, senderId);
         }
-
+        
         private bool isValidJsonSyntax(string json)
         {
             try
