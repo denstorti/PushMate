@@ -13,6 +13,8 @@
     <NeutralLanguage>en</NeutralLanguage>
     <PackageTags>messages, push, notifications, .net core, android, ios, fcm, firebase, messaging, cloud</PackageTags>
     <PackageReleaseNotes>This first version supports only HTTPS communication with FCM.</PackageReleaseNotes>
+    <Authors>Denis Storti da Silva</Authors>
+    <Company />
   </PropertyGroup>
 
   <ItemGroup>
