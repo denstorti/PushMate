@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using PushMate.Domain;
-using PushMate.Domain.Interfaces;
-using PushMate.Infrastructure;
+using PushMate.FcmPushService.Domain;
+using PushMate.FcmPushService.Domain.Interfaces;
+using PushMate.FcmPushService.Infrastructure;
 using System;
 
-namespace PushMate.Application
+namespace PushMate.FcmPushService.Application
 {
     class Program
     {

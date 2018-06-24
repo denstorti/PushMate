@@ -1,19 +1,17 @@
 ﻿using Newtonsoft.Json;
-using PushMate.Domain;
-using PushMate.Domain.Interfaces;
 using System.Collections.Generic;
 
-namespace PushMate.Infrastructure.DTO
+namespace PushMate.FcmPushService.DTO
 {
     /// <summary>
     /// Keys for messages
     /// </summary>
-    public class FcmMessage: IMessage
+    public class Message
     {
         /// <summary>
         /// This parameter specifies the recipient of a message.
         /// <para/>The value must be a registration token, notification key, or topic. Do not set this field when sending to multiple topics. 
-        ///<para/>See <seealso cref="PushMate.Domain.Net.Message.Condition"/>
+        ///<para/>See <seealso cref="PushMate.FcmPushService.Domain.Net.Message.Condition"/>
         /// </summary>
         [JsonProperty("to")]
         public string To { get; set; }
@@ -49,7 +47,7 @@ namespace PushMate.Infrastructure.DTO
         /// </summary>
         [JsonProperty("priority")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public FcmPriority Priority { get; set; }
+        public Priority Priority { get; set; }
 
         /// <summary>
         /// On iOS, use this field to represent content-available in the APNs payload. When a notification or message is sent and this is set to true, an inactive client app is awoken. On Android, data messages wake the app by default. On Chrome, currently not supported.
@@ -91,6 +89,6 @@ namespace PushMate.Infrastructure.DTO
         /// This parameter specifies the predefined, user-visible key-value pairs of the notification payload. See Notification payload support for detail. For more information about notification message and data message options, see Payload.
         /// </summary>
         [JsonProperty("notification")]
-        public INotification Notification { get; set; }
+        public Notification Notification { get; set; }
     }
 }

@@ -1,6 +1,6 @@
-﻿using PushMate.Domain.Interfaces;
+﻿using PushMate.FcmPushService.Domain.Interfaces;
 
-namespace PushMate.Domain
+namespace PushMate.FcmPushService.Domain
 {
     /// <summary>
     /// Result Item

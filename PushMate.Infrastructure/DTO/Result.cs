@@ -1,12 +1,11 @@
 ﻿using Newtonsoft.Json;
-using PushMate.Domain.Interfaces;
 
-namespace PushMate.Infrastructure.DTO
+namespace PushMate.FcmPushService.DTO
 {
     /// <summary>
     /// Result Item
     /// </summary>
-    public class FcmResult: IResult
+    public class Result
     {
         /// <summary>
         /// String specifying a unique ID for each successfully processed message.

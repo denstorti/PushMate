@@ -1,13 +1,12 @@
 ﻿using Newtonsoft.Json;
-using PushMate.Domain.Interfaces;
 using System.Collections.Generic;
 
-namespace PushMate.Infrastructure.DTO
+namespace PushMate.FcmPushService.DTO
 {
     /// <summary>
     /// Keys for notification messages
     /// </summary>
-    public class FcmNotification: INotification
+    public class Notification
     {
         /// <summary>
         /// (i0S, Android, Web) Indicates notification title.

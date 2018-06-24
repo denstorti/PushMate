@@ -1,7 +1,7 @@
-﻿using PushMate.Domain.Interfaces;
+﻿using PushMate.FcmPushService.Domain.Interfaces;
 using System.Collections.Generic;
 
-namespace PushMate.Domain
+namespace PushMate.FcmPushService.Domain
 {
     /// <summary>
     /// Keys for notification messages

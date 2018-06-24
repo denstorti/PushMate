@@ -1,4 +1,4 @@
-﻿namespace PushMate.Domain
+﻿namespace PushMate.FcmPushService.Domain
 {
     /// <summary>
     /// Priority of the message

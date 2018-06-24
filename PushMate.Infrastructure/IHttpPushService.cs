@@ -1,14 +1,10 @@
-﻿using PushMate.Domain.Interfaces;
+﻿using PushMate.FcmPushService.DTO;
 using System.Threading.Tasks;
 
-namespace PushMate.Infrastructure
+namespace PushMate.FcmPushService
 {
     public interface IHttpPushService
     {
-        string EndpointUrl { get; }
-        string AuthenticationKey { get; }
-        string SenderId { get; }
-        string ContentType { get; }
-        Task<IResponse> SendAsync(IMessage message);
+        Task<Response> SendAsync(Message message);
     }
 }

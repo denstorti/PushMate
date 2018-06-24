@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 
-namespace PushMate.Infrastructure.DTO
+namespace PushMate.FcmPushService.DTO
 {
     /// <summary>
     /// Priority of the message
     /// </summary>
-    public enum FcmPriority
+    public enum Priority
     {
         [JsonProperty("normal")]
         Normal,

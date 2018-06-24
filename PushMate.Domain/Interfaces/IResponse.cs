@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PushMate.Domain.Interfaces
+namespace PushMate.FcmPushService.Domain.Interfaces
 {
     public interface IResponse
     {

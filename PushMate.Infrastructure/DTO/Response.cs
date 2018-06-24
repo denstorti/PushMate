@@ -1,24 +1,21 @@
 ﻿using Newtonsoft.Json;
-using PushMate.Domain.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Net;
-using System.Text;
 
-namespace PushMate.Infrastructure.DTO
+namespace PushMate.FcmPushService.DTO
 {
     /// <summary>
     /// Response Message Content
     /// </summary>
-    public class FcmResponse: IResponse
+    public class Response
     {
-        private HttpStatusCode statusCode;
-        private string reasonPhrase;
+        public HttpStatusCode StatusCode { get; set; }
+        public string ReasonPhrase{ get; set; }
 
-        public FcmResponse(HttpStatusCode statusCode, string reasonPhrase)
+        public Response(HttpStatusCode statusCode, string reasonPhrase)
         {
-            this.statusCode = statusCode;
-            this.reasonPhrase = reasonPhrase;
+            this.StatusCode = statusCode;
+            this.ReasonPhrase = reasonPhrase;
         }
 
         /// <summary>
@@ -49,6 +46,6 @@ namespace PushMate.Infrastructure.DTO
         /// Array of objects representing the status of the messages processed. The objects are listed in the same order as the request (i.e., for each registration ID in the request, its result is listed in the same index in the response).
         /// </summary>
         [JsonProperty("results")]
-        public List<FcmResult> Results { get; set; }
+        public List<Result> Results { get; set; }
     }
 }

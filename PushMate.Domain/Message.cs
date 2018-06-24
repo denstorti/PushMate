@@ -1,7 +1,7 @@
-﻿using PushMate.Domain.Interfaces;
+﻿using PushMate.FcmPushService.Domain.Interfaces;
 using System.Collections.Generic;
 
-namespace PushMate.Domain
+namespace PushMate.FcmPushService.Domain
 {
     /// <summary>
     /// Keys for messages
@@ -11,7 +11,7 @@ namespace PushMate.Domain
         /// <summary>
         /// This parameter specifies the recipient of a message.
         /// <para/>The value must be a registration token, notification key, or topic. Do not set this field when sending to multiple topics. 
-        ///<para/>See <seealso cref="PushMate.Domain.Net.Message.Condition"/>
+        ///<para/>See <seealso cref="PushMate.FcmPushService.Domain.Net.Message.Condition"/>
         /// </summary>
         public string To { get; set; }
 
