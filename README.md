@@ -3,7 +3,7 @@ Push Notifications Systems written in .NET Core 2.1.
 
 This component has the responsibility of parsing an Message object or a json, validate the notification attributes and send it to the Firebase Cloud Messaging  
 
-### Based on project FCM.NET (https://github.com/angelobelchior/FCM.Net)
+#### Based on project FCM.NET (https://github.com/angelobelchior/FCM.Net)
 
 # How to use it
 
