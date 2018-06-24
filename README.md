@@ -1,7 +1,6 @@
-# Push Mate
-Push Notifications Systems written in .NET Core 2.1.
+# Push Mate - FCM Push Service
 
-This component has the responsibility of parsing an Message object or a json, validate the notification attributes and send it to the Firebase Cloud Messaging  
+Allows you to send notifications using Firebase Cloud Messaging.
 
 #### Based on project FCM.NET (https://github.com/angelobelchior/FCM.Net)
 
