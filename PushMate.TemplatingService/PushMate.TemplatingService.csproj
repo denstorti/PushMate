@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Description>Simple string templating using .NET Core</Description>
+    <Authors>Denis Storti da Silva</Authors>
+    <PackageProjectUrl>https://github.com/denstorti/PushMate.FcmPushService</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/denstorti/PushMate.FcmPushService.git</RepositoryUrl>
+    <PackageReleaseNotes>template, string, push notifications</PackageReleaseNotes>
+    <PackageLicenseUrl>https://github.com/denstorti/PushMate.FcmPushService/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
 </Project>
