@@ -11,9 +11,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FcmPushService", "FcmPushSe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TemplatingService", "TemplatingService", "{8EA38A5E-FD9B-4B50-9C50-E823A76A74E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushMate.TemplatingService", "PushMate.TemplatingService\PushMate.TemplatingService.csproj", "{FCC46993-B5BC-4AA5-ADF1-283CEE758D28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PushMate.TemplatingService", "PushMate.TemplatingService\PushMate.TemplatingService.csproj", "{FCC46993-B5BC-4AA5-ADF1-283CEE758D28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushMate.TemplatingService.Test", "PushMate.TemplatingService.Test\PushMate.TemplatingService.Test.csproj", "{02C49BE9-598B-4FB4-800A-460BEE0B533C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PushMate.TemplatingService.Test", "PushMate.TemplatingService.Test\PushMate.TemplatingService.Test.csproj", "{02C49BE9-598B-4FB4-800A-460BEE0B533C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionResources", "SolutionResources", "{6D9CB6A9-F22E-4F4B-895B-C50B09BB50DF}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionResources\pushmate.png = SolutionResources\pushmate.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
