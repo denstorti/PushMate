@@ -6,9 +6,13 @@
     <Authors>Denis Storti da Silva</Authors>
     <PackageProjectUrl>https://github.com/denstorti/PushMate.FcmPushService</PackageProjectUrl>
     <RepositoryUrl>https://github.com/denstorti/PushMate.FcmPushService.git</RepositoryUrl>
-    <PackageReleaseNotes>template, string, push notifications</PackageReleaseNotes>
+    <PackageReleaseNotes>just the icon</PackageReleaseNotes>
     <PackageLicenseUrl>https://github.com/denstorti/PushMate.FcmPushService/blob/master/LICENSE</PackageLicenseUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageIconUrl>https://github.com/denstorti/PushMate.FcmPushService/blob/master/SolutionResources/pushmate.png?raw=true</PackageIconUrl>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 </Project>

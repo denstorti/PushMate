@@ -12,9 +12,13 @@
     <PackageLicenseUrl>https://github.com/denstorti/PushMate.FcmPushService/blob/master/LICENSE</PackageLicenseUrl>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageTags>messages, push, notifications, .net core, android, ios, fcm, firebase, messaging, cloud</PackageTags>
-    <PackageReleaseNotes>This first version supports only HTTPS communication with FCM.</PackageReleaseNotes>
+    <PackageReleaseNotes>just the icon</PackageReleaseNotes>
     <Authors>Denis Storti da Silva</Authors>
     <Company />
+    <PackageIconUrl>https://github.com/denstorti/PushMate.FcmPushService/blob/master/SolutionResources/pushmate.png?raw=true</PackageIconUrl>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
