@@ -6,19 +6,16 @@ branches:
   - master
 
 install:
+- dotnet restore
 
 before_build:
-- dotnet restore --verbosity m
+
 
 build_script:
 - dotnet build
 
 test_script:
 - cd PushMate.FcmPushService.Test
-- dotnet test
-- cd PushMate.TemplatingService.Test
-- dotnet test
-- cd PushMate.TemplatingService.API.Test
 - dotnet test
 
 
