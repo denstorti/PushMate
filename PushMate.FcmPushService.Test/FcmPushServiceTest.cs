@@ -6,9 +6,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace PushMate.FcmPushService.Test.Infrastructure
+namespace PushMate.FcmPushService.Test
 {
-    public class IntegrationFcmTest
+    public class FcmPushServiceTest
     {
         private readonly string serverKey = "AIzaSyC8dhbIHM0BEDextBkH1YRGwq2zWSPW2kk";
         private readonly string registrationId = "dG4rFnirWOE:APA91bE3COnsY-flnulPse4b4uKZOUDRpdOAe6DGTU_jWGtJt0P_hBXoN1tOa9Je4ZyAfA11OS3US0fZm6M7EljYipCY1f4MqjDLLvEltfe8_3aDnzwTxRbuw23HQ2JIY2ihXQXUvDym";
