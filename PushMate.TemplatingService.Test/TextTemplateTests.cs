@@ -18,7 +18,7 @@ namespace PushMate.TemplatingService.Test
             };
             string expected = "Hello Denis";
 
-            string result = TemplateService.ApplyTextTemplate(baseTemplate, dictVariables);
+            string result = TemplateService.ApplyTextTemplateAsync(baseTemplate, dictVariables).Result;
 
             Assert.Equal(expected, result);
         }
@@ -34,7 +34,7 @@ namespace PushMate.TemplatingService.Test
             };
             string expected = "Hello Denis. Your account balance is $1000.00. Thanks Denis!";
 
-            string result = TemplateService.ApplyTextTemplate(baseTemplate, dictVariables);
+            string result = TemplateService.ApplyTextTemplateAsync(baseTemplate, dictVariables).Result;
 
             Assert.Equal(expected, result);
         }
@@ -49,7 +49,7 @@ namespace PushMate.TemplatingService.Test
 
             string expected = "Hello!";
 
-            string result = TemplateService.ApplyTextTemplate(baseTemplate, dictVariables);
+            string result = TemplateService.ApplyTextTemplateAsync(baseTemplate, dictVariables).Result;
 
             Assert.Equal(expected, result);
         }
@@ -59,8 +59,8 @@ namespace PushMate.TemplatingService.Test
         {
             string baseTemplate = "Hello!";
             
-            Assert.Throws<ArgumentException>(() =>
-                TemplateService.ApplyTextTemplate(baseTemplate, null)
+            Assert.ThrowsAsync<ArgumentException>(() =>
+                TemplateService.ApplyTextTemplateAsync(baseTemplate, null)
             );
         }
 
@@ -74,8 +74,8 @@ namespace PushMate.TemplatingService.Test
                 { "name", "Denis"}
             };
             
-            Assert.Throws<ArgumentException>(() =>
-                TemplateService.ApplyTextTemplate(baseTemplate, dictVariables)
+            Assert.ThrowsAsync<ArgumentException>(() =>
+                TemplateService.ApplyTextTemplateAsync(baseTemplate, dictVariables)
             );
         }
 
@@ -90,8 +90,8 @@ namespace PushMate.TemplatingService.Test
                 { "balance", "1000.00"}
             };
 
-            Assert.Throws<ArgumentException>(() =>
-                TemplateService.ApplyTextTemplate(baseTemplate, dictVariables)
+            Assert.ThrowsAsync<ArgumentException>(() =>
+                TemplateService.ApplyTextTemplateAsync(baseTemplate, dictVariables)
             );
         }
 
