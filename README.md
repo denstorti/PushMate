@@ -4,8 +4,6 @@
 
 Allows you to send notifications using Firebase Cloud Messaging.
 
-#### Based on project FCM.NET (https://github.com/angelobelchior/FCM.Net)
-
 # How to use it
 
 You need to have your own FCM Server Key to use this library. (Learn more here https://firebase.google.com/docs/cloud-messaging/server)
