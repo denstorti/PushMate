@@ -1,6 +1,6 @@
 # Push Mate - FCM Push Service
 
-<img src="https://ci.appveyor.com/api/projects/status/denstorti/pushmate-fcmpushservice?svg=true" alt="Project Badge">
+[![Build status](https://ci.appveyor.com/api/projects/status/2r1l6ye1l1cj5rfp/branch/master?svg=true)](https://ci.appveyor.com/project/denstorti/pushmate-fcmpushservice/branch/master)
 
 Allows you to send notifications using Firebase Cloud Messaging.
 
