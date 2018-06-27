@@ -1,17 +1,22 @@
 image: Visual Studio 2017
 init:
-  - git config --global core.autocrlf true
+  - cmd: git config --global core.autocrlf true
+branches:
+  only:
+  - master
 
- install:
+install:
   - ECHO %APPVEYOR_BUILD_WORKER_IMAGE%
   - dotnet --version
-  - dotnet restore
-  
+  - dotnet restore --verbosity m
+ 
+before_build:
+- appveyor-retry dotnet restore -v Minimal
+
 build_script:
 - dotnet build
 
-before_build:
-- appveyor-retry dotnet restore -v Minimal
+
 
 test_script:
 - cd PushMate.FcmPushService.Test
