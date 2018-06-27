@@ -1,5 +1,7 @@
 # Push Mate - FCM Push Service
 
+<img src="https://ci.appveyor.com/api/projects/status/denstorti/pushmate-fcmpushservice?svg=true" alt="Project Badge">
+
 Allows you to send notifications using Firebase Cloud Messaging.
 
 #### Based on project FCM.NET (https://github.com/angelobelchior/FCM.Net)
