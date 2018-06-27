@@ -16,7 +16,7 @@ build_script:
 
 test_script:
 - cd PushMate.FcmPushService.Test
-- dotnet test
+- dotnet test --no-build
 
 
 
