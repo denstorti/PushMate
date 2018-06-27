@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PushMate.FcmPushService
 {
-    class FormatMessage
+    public class FormatMessage
     {
         public static string ContentType => "application/json";
 

@@ -14,6 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionResources", "Soluti
 		SolutionResources\pushmate.png = SolutionResources\pushmate.png
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushMate.FcmPushService.API", "PushMate.FcmPushService.API\PushMate.FcmPushService.API.csproj", "{6A4859A2-B83A-4A42-99A8-3F41FCBFEFDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushMate.FcmPushService.API.Test", "PushMate.FcmPushService.API.Test\PushMate.FcmPushService.API.Test.csproj", "{2FC0FB41-F01D-49D1-9FDB-4E844A0242F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +32,14 @@ Global
 		{EB2C6832-80F8-4EE8-B598-080365037227}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB2C6832-80F8-4EE8-B598-080365037227}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB2C6832-80F8-4EE8-B598-080365037227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A4859A2-B83A-4A42-99A8-3F41FCBFEFDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A4859A2-B83A-4A42-99A8-3F41FCBFEFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A4859A2-B83A-4A42-99A8-3F41FCBFEFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A4859A2-B83A-4A42-99A8-3F41FCBFEFDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FC0FB41-F01D-49D1-9FDB-4E844A0242F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FC0FB41-F01D-49D1-9FDB-4E844A0242F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FC0FB41-F01D-49D1-9FDB-4E844A0242F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FC0FB41-F01D-49D1-9FDB-4E844A0242F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,6 +47,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{16EE3886-771D-46EA-9EEA-56ECB6C41C7B} = {FDF749C2-151F-4296-85A2-236E6607812F}
 		{EB2C6832-80F8-4EE8-B598-080365037227} = {FDF749C2-151F-4296-85A2-236E6607812F}
+		{6A4859A2-B83A-4A42-99A8-3F41FCBFEFDE} = {FDF749C2-151F-4296-85A2-236E6607812F}
+		{2FC0FB41-F01D-49D1-9FDB-4E844A0242F3} = {FDF749C2-151F-4296-85A2-236E6607812F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F1AD7F1-13EB-4354-824A-620C51280A1E}

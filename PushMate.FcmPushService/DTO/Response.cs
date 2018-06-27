@@ -12,6 +12,8 @@ namespace PushMate.FcmPushService.DTO
         public HttpStatusCode StatusCode { get; set; }
         public string ReasonPhrase{ get; set; }
 
+        public Response() { }
+
         public Response(HttpStatusCode statusCode, string reasonPhrase)
         {
             this.StatusCode = statusCode;
