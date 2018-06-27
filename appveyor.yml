@@ -6,17 +6,12 @@ branches:
   - master
 
 install:
-  - ECHO %APPVEYOR_BUILD_WORKER_IMAGE%
-  - dotnet --version
-  - dotnet restore --verbosity m
- 
+
 before_build:
-- appveyor-retry dotnet restore -v Minimal
+- dotnet restore --verbosity m
 
 build_script:
 - dotnet build
-
-
 
 test_script:
 - cd PushMate.FcmPushService.Test
